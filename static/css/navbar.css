@@ -1,0 +1,32 @@
+.navbar a {
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+  transition: all 0.2s ease;
+  position: relative;
+  opacity: 0.6;
+}
+.navbar a:hover, .navbar a:focus {
+  transform: scale(1.2);
+  opacity: 1;
+}
+.navbar a:hover:after, .navbar a:focus:after {
+  transform: scaleX(1);
+}
+.navbar a:after {
+  background-color: currentColor;
+  width: 30px;
+  height: 1px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  transform: scaleX(0);
+  transition: all 0.2s ease;
+  position: absolute;
+  content: "";
+}
+
+/*# sourceMappingURL=file.css.map */

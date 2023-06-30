@@ -1,0 +1,67 @@
+<html>
+  <header>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/navbar.css">
+    <link rel="stylesheet" href="/static/css/popup.css">
+    <link rel="stylesheet" href="/static/css/register.css">
+  </header>
+  <body class="main_body">
+    <div class="languages">
+      <span id="en">EN</span>
+      <span id="ro">RO</span>
+    </div>
+
+    <div class="logo">
+      <span id="logo_file" style="cursor:pointer;">FILE</span>
+      <span id="logo_sharing">SHARING</span>
+    </div>
+    <nav>
+      <div class="navBar">
+        <ul>
+          <li><a data-menu="Transfer" href="/">Transfer</li></a>
+          <li><a data-menu="MyLinks" href="/my_links">My Links</li></a>
+        </ul>
+      </div>
+    </nav>
+    <div class="action">
+      <div class="avatar_image" onclick="toggleMenu();">
+        <img src="static/images/profile-icon.png">
+      </div>
+      <div class="menu">
+        <ul>
+          <li><img src="/static/images/login.png"><a href="/login">Login</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="navBar_line">
+      <span id="line"></span>
+    </div>
+    <div class="login-page">
+        <div class="form">
+          <form class="register-form" method="POST">
+            <input name='username' type="text" placeholder="name" required/>
+            <input name='password' type="password" placeholder="password" required/>
+            <input name='email' type="text" placeholder="email address" required/>
+            <button type="submit" name="action" value="register">create</button>
+            <p class="message">Already registered? <a href="#">Sign In</a></p>
+          </form>
+          <form class="login-form" method="POST">
+            <input name='username' type="text" placeholder="username" required/>
+            <input name='password' type="password" placeholder="password" required/>
+            {% with messages = get_flashed_messages() %}
+              {% if messages %} 
+                {% for message in messages %}
+                  <div  class="flashed-message">{{ message }}</div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+            <button type="submit" name="action" value="login" class="btn btn-primary">login</button>
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
+          </form>
+        </div>
+      </div>
+    <script src="static/js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="static/js/loginForm.js"></script>
+  </body>
+</html>
